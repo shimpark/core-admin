@@ -6,19 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
 {
-    public partial class TestChildEntity
+    public partial class TestEntitiesWithImage
     {
-        public TestChildEntity()
-        {
-            TestParentEntities = new HashSet<TestParentEntity>();
-        }
-
         [Key]
         public Guid Id { get; set; }
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
-
-        [InverseProperty(nameof(TestParentEntity.Child))]
-        public virtual ICollection<TestParentEntity> TestParentEntities { get; set; }
+        public byte[] Image { get; set; }
     }
 }

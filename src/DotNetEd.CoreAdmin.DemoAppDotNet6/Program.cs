@@ -1,4 +1,4 @@
-using DotNetEd.CoreAdmin.DemoApp.Models;
+using DotNetEd.CoreAdmin.DemoAppDotNet6.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // Add the DB Contexts
-builder.Services.AddDbContext<TestDbContext>(options => options.UseInMemoryDatabase("TestDatabase"));
+//builder.Services.AddDbContext<TestDbContext>(options => options.UseInMemoryDatabase("TestDatabase"));
+
+builder.Services.AddSqlServer<ChinookContext>(builder.Configuration.GetConnectionString("Database"));
+
 
 // add Core Admin
 builder.Services.AddCoreAdmin();

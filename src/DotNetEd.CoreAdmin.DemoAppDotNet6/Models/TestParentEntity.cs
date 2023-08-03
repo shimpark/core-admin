@@ -1,18 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
 {
-    public class TestParentEntity
+    [Index(nameof(ChildId), Name = "IX_TestParentEntities_ChildId")]
+    public partial class TestParentEntity
     {
-        [Display(AutoGenerateField = false)]
         [Key]
         public Guid ParentId { get; set; }
-
-        [Display(AutoGenerateField = false)]
         public Guid? ChildId { get; set; }
 
-        [ForeignKey("ChildId")]
-        public TestChildEntity? Child { get; set; }
+        [ForeignKey(nameof(ChildId))]
+        [InverseProperty(nameof(TestChildEntity.TestParentEntities))]
+        public virtual TestChildEntity Child { get; set; }
     }
 }
