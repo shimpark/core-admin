@@ -13,9 +13,11 @@ builder.Services.AddSqlServer<ChinookContext>(builder.Configuration.GetConnectio
 
 
 // add Core Admin
+//builder.Services.AddCoreAdmin("Administrator");
 builder.Services.AddCoreAdmin();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -34,7 +36,7 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.UseCoreAdminCustomTitle("Core Admin Demo App");
+app.UseCoreAdminCustomTitle("대학내일 관리자 화면");
 
 // Required for Core Admin
 app.MapDefaultControllerRoute();

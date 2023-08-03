@@ -9,6 +9,7 @@ namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
     public partial class TestEntity
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [Required]
         [StringLength(100)]
@@ -19,6 +20,8 @@ namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
         [StringLength(300)]
         public string Description { get; set; }
         [StringLength(3000)]
+
+        [DataType("Markdown")]
         public string Body { get; set; }
         public int EnumName { get; set; }
         public double Price { get; set; }

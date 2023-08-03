@@ -36,7 +36,7 @@ namespace DotNetEd.CoreAdmin
 
             foreach(var culture in cultureKeys)
             {
-                var fileName = $"{culture}.json";
+                var fileName = $"{culture.Split(',')[0]}.json";
                 var key = translations.Keys.FirstOrDefault(k => k.EndsWith(fileName));
                 if (key != null)
                 {

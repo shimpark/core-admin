@@ -1,0 +1,10 @@
+{
+  "Create": "작성하기",
+  "AccessDatabaseEntries": "왼쪽의 데이터베이스 항목을 선택해 주세요.",
+  "DevelopmentModeMessage": "지금은 개발 모드이기 때문에 보안이 적용되지 않았습니다. 해당 웹사이트를 참고해 주세요 : https://github.com/edandersen/core-admin 에서 설명서를 참조하세요.",
+  "CreateNew": "작성하기",
+  "GoBack": "뒤로가기",
+  "Edit": "수정하기",
+  "Delete": "삭제하기",
+  "DeleteConfirm": "정말로 삭제하시겠습니까？"
+}

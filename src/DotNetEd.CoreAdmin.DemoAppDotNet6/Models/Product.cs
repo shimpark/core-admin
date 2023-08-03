@@ -9,6 +9,7 @@ namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
     public partial class Product
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [Required]
         [StringLength(100)]
@@ -18,6 +19,8 @@ namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
         public string Category { get; set; }
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
+
+        [System.ComponentModel.DataAnnotations.ScaffoldColumn(false)]
         public int Idx { get; set; }
     }
 }

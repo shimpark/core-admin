@@ -12,9 +12,8 @@ namespace DotNetEd.CoreAdmin.DemoAppDotNet6.Models
         [Key]
         public Guid ParentId { get; set; }
         public Guid? ChildId { get; set; }
-
+        
         [ForeignKey(nameof(ChildId))]
-        [InverseProperty(nameof(TestChildEntity.TestParentEntities))]
-        public virtual TestChildEntity Child { get; set; }
+        public TestChildEntity Child { get; set; }
     }
 }
